@@ -4,9 +4,9 @@ import { FaGithub } from "react-icons/fa6";
 
 const Hero = () => {
   return (
-    <div className="flex w-full flex-col justify-center items-center py-20">
+    <div className="flex w-full flex-col justify-center items-center py-40">
       <h1 className="flex text-5xl text-center w-1/2 font-extrabold leading-10- text-boxdark-2">
-        Tools and Resources for busy programmers! Everything OpenSource
+        Tools and Resources for busy programmers. Everything OpenSource!
       </h1>
       <p className="flex text-lg text-center mt-8 w-1/2">
         Speed up your development process by reducing the time you take to

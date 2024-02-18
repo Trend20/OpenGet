@@ -18,15 +18,9 @@ const headerLinks = [
 const Header = () => {
   return (
     <div className="flex w-full items-center justify-between py-10">
-      <div className="flex w-30 justify-start items-center">
+      <div className="flex w-20 justify-start items-center">
         <Link href="/" className="flex font-bold text-2xl items-center">
-          <Image
-            src="logo.svg"
-            alt="logo"
-            width="100"
-            height="100"
-            className="w-3/4"
-          />
+          <Image src="logo.svg" alt="logo" width="100" height="100" />
           OpenGet
         </Link>
       </div>
