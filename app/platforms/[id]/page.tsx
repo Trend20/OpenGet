@@ -1,6 +1,10 @@
+import { getPlatformByName } from "@/app/api/platforms";
 import React from "react";
 
-const Platform = () => {
+const Platform = async ({ params }: { params: { name: string } }) => {
+  const name = params.name;
+  const platform = await getPlatformByName(name);
+  console.log(platform);
   return <div>Platform</div>;
 };
 

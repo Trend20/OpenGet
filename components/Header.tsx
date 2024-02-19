@@ -15,8 +15,18 @@ const headerLinks = [
   },
   {
     id: 3,
-    linkName: "Explore",
+    linkName: "Package Managers",
     linkUrl: "/platforms",
+  },
+  {
+    id: 4,
+    linkName: "Languages",
+    linkUrl: "/languages",
+  },
+  {
+    id: 5,
+    linkName: "Projects",
+    linkUrl: "/projects",
   },
 ];
 
@@ -29,9 +39,9 @@ const Header = () => {
           OpenGet
         </Link>
       </div>
-      <div className="flex items-center justify-between w-1/4">
+      <div className="flex items-center justify-between w-1/2">
         {headerLinks.map((link) => (
-          <Link key={link.id} href={link.linkUrl} className="">
+          <Link key={link.id} href={link.linkUrl}>
             {link.linkName}
           </Link>
         ))}

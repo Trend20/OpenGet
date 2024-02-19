@@ -5,7 +5,7 @@ export async function getAllPlatforms(
   currentPage: string
 ): Promise<Platform[]> {
   const response = await fetch(
-    `${OPENSOURCE_PLATFORMS_API_URL}/location?page=${currentPage}`
+    `${OPENSOURCE_PLATFORMS_API_URL}/platform?page=${currentPage}`
   );
 
   if (!response.ok) {
@@ -15,9 +15,12 @@ export async function getAllPlatforms(
   return response.json();
 }
 
-export async function getPlatformById(locationId: string): Promise<Platform> {
+export async function getPlatformByName(
+  name: string,
+  platform: string
+): Promise<Platform> {
   const response = await fetch(
-    `${OPENSOURCE_PLATFORMS_API_URL}/location/${locationId}`
+    `${OPENSOURCE_PLATFORMS_API_URL}/${platform}/${name}`
   );
 
   if (!response.ok) {
