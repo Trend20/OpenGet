@@ -13,6 +13,11 @@ const headerLinks = [
     linkName: "About",
     linkUrl: "/about",
   },
+  {
+    id: 3,
+    linkName: "Explore",
+    linkUrl: "/platforms",
+  },
 ];
 
 const Header = () => {
