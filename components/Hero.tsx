@@ -6,7 +6,7 @@ import { MdOutlineExplore } from "react-icons/md";
 const Hero = () => {
   return (
     <div className="flex w-full flex-col justify-center items-center py-40">
-      <h1 className="flex text-7xl text-center w-3/4 font-extrabold leading-10- text-boxdark-2">
+      <h1 className="flex text-7xl text-center w-3/4 font-extrabold leading-[1.08] text-boxdark-2">
         Tools and Resources for busy programmers. Everything OpenSource!
       </h1>
       <p className="flex text-lg text-center mt-10 w-1/2">
