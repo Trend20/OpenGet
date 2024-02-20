@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { platform } from "os";
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { MdOutlineStar } from "react-icons/md";
+import { PiGitForkBold } from "react-icons/pi";
+import { GoIssueOpened } from "react-icons/go";
 
 const Project = ({ project }: any) => {
   return (
@@ -10,8 +12,8 @@ const Project = ({ project }: any) => {
     >
       <div className="flex p-3 items-center justify-between">
         <h3 className="font-bold flex border-none">{project.name}</h3>
-        <Link href={project.git_url} target="_blank">
-          <FiExternalLink color="#0394fc" />
+        <Link href={project.html_url} target="_blank">
+          <FiExternalLink color="#0394fc" size={20} />
         </Link>
       </div>
       <hr className="border-grey" />
@@ -20,20 +22,30 @@ const Project = ({ project }: any) => {
       </div>
       <hr className="border-grey" />
       <div className="flex p-3 items-center justify-between">
-        <p>Stars Count:</p> <p>{project.stargazers_count}</p>
+        <p>
+          <MdOutlineStar color="#0394fc" size={20} />
+        </p>{" "}
+        <p>{project.stargazers_count}</p>
       </div>
       <hr className="border-grey" />
       <div className="flex p-3 items-center justify-between">
-        <p>Open Issues:</p> <p>{project.open_issues_count}</p>
+        {" "}
+        <p>
+          <GoIssueOpened color="#0394fc" size={20} />
+        </p>{" "}
+        <p>{project.open_issues_count}</p>
       </div>
       <hr className="border-grey" />
       <div className="flex p-3 items-center justify-between">
-        <p>Forks:</p> <p>{project.forks_count}</p>
+        <p>
+          <PiGitForkBold color="#0394fc" size={20} />
+        </p>{" "}
+        <p>{project.forks_count}</p>
       </div>
       <hr className="border-grey" />
       <div className="flex py-8">
         <Link
-          href={project.git_url}
+          href={project.html_url}
           target="_blank"
           className="flex justify-center items-center border border-meta-5 text-meta-5 rounded-md p-3 w-3/4 m-auto hover:bg-meta-5 hover:text-whiten"
         >
