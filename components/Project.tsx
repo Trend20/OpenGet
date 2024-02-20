@@ -5,7 +5,7 @@ import { MdOutlineStar } from "react-icons/md";
 import { PiGitForkBold } from "react-icons/pi";
 import { GoIssueOpened } from "react-icons/go";
 
-const Project = ({ project }: any) => {
+const Project = async ({ project }: any) => {
   return (
     <div
       className={`flex flex-col rounded-md border cursor-pointer border-grey`}

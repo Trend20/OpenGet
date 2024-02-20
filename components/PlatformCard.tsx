@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
 
-const PlatformCard = ({ platform }: any) => {
+const PlatformCard = async ({ platform }: any) => {
   return (
     <div
       className={`flex flex-col rounded-md border cursor-pointer h-65 border-grey bg-${platform.color}`}
@@ -19,7 +19,7 @@ const PlatformCard = ({ platform }: any) => {
       </div>
       <hr className="border-grey" />
       <div className="flex p-3 items-center justify-between">
-        <p>Project Count:</p> <p>{platform.project_count}</p>
+        <p>Projects:</p> <p>{platform.project_count}</p>
       </div>
       <hr className="border-grey" />
       <div className="flex py-8">
