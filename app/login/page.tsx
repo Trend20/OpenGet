@@ -3,45 +3,51 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { TbHexagonNumber1 } from "react-icons/tb";
+import { TbHexagonNumber2 } from "react-icons/tb";
 
 const Login = () => {
   return (
-    <div className="flex  m-auto justify-center items-center flex-col py-10 px-10 mt-20 w-[270] bg-bodydark1 rounded-md">
-      <div className="flex flex-col justify-center items-center">
-        <Link href="/" className="flex font-bold text-2xl items-center">
-          <Image src="logo.svg" alt="logo" width="100" height="100" />
-        </Link>
-        <h1 className="text-2xl font-bold text-black-2">Welcome</h1>
-        <p>Sign in to your account!</p>
+    <div className="flex m-auto justify-between items-center py-10 px-10 mt-30 w-1/2 h-[300] bg-bodydark1 rounded-md">
+      <div className="flex flex-col w-3/4">
+        <h1 className="text-2xl font-bold text-black-2">Welcome to OpenGet!</h1>
+        <p className="w-3/4 mt-5">
+          Your one-stop place for getting open source software and libraries to
+          fuel your development journey.
+        </p>
+        <div className="flex flex-col mt-7">
+          <p className="flex items-center px-5 py-2">
+            <i className="mr-5 text-black-2">
+              <TbHexagonNumber1 size={20} />
+            </i>{" "}
+            No access to your private repositories.
+          </p>
+          <p className="flex items-center px-5 py-2">
+            {" "}
+            <i className="mr-5 text-black-2">
+              <TbHexagonNumber2 size={20} />
+            </i>
+            No spam email.
+          </p>
+        </div>
       </div>
-      <div className="flex flex-col mt-10 w-full">
-        <Link
-          href="/"
-          className="flex mt-5 rounded-md p-5 bg-whiten items-center"
-        >
-          <div className="flex w-10">
-            <Image src="gitlab.svg" alt="logo" width="100" height="100" />
-          </div>
-          <div className="flex flex-col ml-8">
-            <h3 className="text-2xl font-bold text-black-2">
-              Continue with GitLab
-            </h3>
-            <p>We will not send you unnecessary emails.</p>
-          </div>
-        </Link>
+      <div className="flex flex-col w-96">
         <Link
           href="#"
           onClick={() => signIn("github")}
-          className="flex mt-5 rounded-md p-5 bg-whiten items-center"
+          className="flex w-full rounded-md p-5 text-white bg-black-2 items-center"
         >
           <div className="flex w-10">
-            <Image src="github.svg" alt="logo" width="100" height="100" />
+            <Image
+              src="github.svg"
+              alt="logo"
+              width="100"
+              height="100"
+              className="flex w-4.5"
+            />
           </div>
-          <div className="flex flex-col ml-8">
-            <h3 className="text-2xl font-bold text-black-2">
-              Continue with GitHub
-            </h3>
-            <p>We will not send you unnecessary emails.</p>
+          <div className="flex flex-col ml-3">
+            <h3 className="text-sm font-bold">Continue with GitHub</h3>
           </div>
         </Link>
       </div>
