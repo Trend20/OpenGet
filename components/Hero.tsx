@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="flex mt-15">
         <div className="flex px-3">
           <Link
-            href="/login"
+            href="/projects"
             className="flex mt-3 bg-boxdark-2 text-sm uppercase text-white justify-center items-center p-4 rounded-md"
           >
             <i className="mr-3">
