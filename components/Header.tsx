@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { GrProjects } from "react-icons/gr";
 import { TbPackages } from "react-icons/tb";
+import { usePathname } from "next/navigation";
 
 const headerLinks = [
   {
@@ -27,7 +30,8 @@ const headerLinks = [
   },
 ];
 
-const Header = async () => {
+const Header = () => {
+  const pathname = usePathname();
   return (
     <div className="flex w-full items-center justify-between py-10">
       <div className="flex w-25.5 justify-start items-center">
@@ -49,7 +53,9 @@ const Header = async () => {
           <Link
             key={link.id}
             href={link.linkUrl}
-            className="flex font-semibold"
+            className={`flex font-semibold ${
+              pathname === link.linkUrl ? "active" : ""
+            }`}
           >
             {link.linkName}
           </Link>
