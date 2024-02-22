@@ -1,8 +1,9 @@
 "use client";
 import Project from "@/components/Project";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { CircleLoader } from "react-spinners";
+import Loading from "./loading";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -33,17 +34,19 @@ const Projects = () => {
           Discover Trending OpenSource Projects.
         </h1>
       </div>
-      {loading ? (
+      {/* {loading ? (
         <div className="flex mt-10">
           <CircleLoader color="#65aee6" />
         </div>
-      ) : (
-        <div className="grid w-full grid-cols-4 gap-8 py-10">
-          {projects.map((project: any) => (
-            <Project key={project.id} project={project} />
-          ))}
-        </div>
-      )}
+      ) : ( */}
+      <div className="grid w-full grid-cols-4 gap-8 py-10">
+        {projects.map((project: any) => (
+          <Suspense key={project.id} fallback={<Loading />}>
+            <Project project={project} />
+          </Suspense>
+        ))}
+      </div>
+      {/* )} */}
     </div>
   );
 };

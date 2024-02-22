@@ -16,7 +16,7 @@ const headerLinks = [
   {
     id: 2,
     linkName: "Package Managers",
-    linkUrl: "/platforms",
+    linkUrl: "/packages",
   },
   {
     id: 3,
