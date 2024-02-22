@@ -15,3 +15,7 @@
     text-wrap: balance;
   }
 }
+
+.active {
+  color: #65aee6;
+}
