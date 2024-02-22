@@ -2,7 +2,6 @@
 import Project from "@/components/Project";
 import axios from "axios";
 import React, { Suspense, useEffect, useState } from "react";
-import { CircleLoader } from "react-spinners";
 import Loading from "./loading";
 
 const Projects = () => {

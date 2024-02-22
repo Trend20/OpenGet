@@ -2,13 +2,11 @@ import { CircleLoader } from "react-spinners";
 
 export default function Loading() {
   return (
-    <main>
-      <h1>Libraries</h1>
-      <div>
-        {Array.from(Array(31).keys()).map((element) => (
-          <CircleLoader key={element} color="#36d7b7" />
-        ))}
+    <>
+      <div className="h-10 w-48 animate-pulse rounded-md bg-stone-100 dark:bg-stone-800" />
+      <div className="flex h-full w-full items-center justify-center">
+        <CircleLoader color="#65aee6" />
       </div>
-    </main>
+    </>
   );
 }
