@@ -28,6 +28,11 @@ const headerLinks = [
     linkName: "Projects",
     linkUrl: "/projects",
   },
+  {
+    id: 5,
+    linkName: "News",
+    linkUrl: "/news",
+  },
 ];
 
 const Header = () => {
