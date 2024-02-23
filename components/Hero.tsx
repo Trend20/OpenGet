@@ -3,7 +3,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa6";
 import { MdOutlineExplore } from "react-icons/md";
 
-const Hero = () => {
+const Hero = async () => {
   return (
     <div className="flex w-full flex-col justify-center items-center py-40">
       <h1 className="flex text-7xl text-center w-3/4 font-extrabold leading-[1.08] text-boxdark-2">
