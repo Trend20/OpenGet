@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Loading from "./loading";
 
-export async function getNews() {
+async function getNews() {
   try {
     const topStoriesResponse = await fetch(
       "https://hacker-news.firebaseio.com/v0/topstories.json"
