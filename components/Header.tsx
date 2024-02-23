@@ -37,7 +37,7 @@ const headerLinks: HeaderLinks[] = [
   },
   {
     id: 5,
-    linkName: "News",
+    linkName: "Stories",
     linkUrl: "/news",
   },
 ];
