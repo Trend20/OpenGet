@@ -1,5 +1,4 @@
 import React from "react";
-import { getCsrfToken } from "next-auth/react";
 import { TbHexagonNumber1 } from "react-icons/tb";
 import { TbHexagonNumber2 } from "react-icons/tb";
 import { getServerSession } from "next-auth";
@@ -11,7 +10,7 @@ const Login = async () => {
 
   console.log("Session: ", session);
 
-  if (session) return redirect("/timeline");
+  if (session) return redirect("/profile");
   return (
     <div className="flex m-auto justify-between items-center py-10 px-10 mt-30 w-1/2 h-[300] bg-bodydark1 rounded-md">
       <div className="flex flex-col w-3/4">
