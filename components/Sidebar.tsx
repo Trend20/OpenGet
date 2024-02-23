@@ -64,7 +64,12 @@ const Sidebar: React.FC = () => {
       <div className="flex w-full items-start">
         <ul className="flex-col  w-1/4 border border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
           {languages.map((lang) => (
-            <li key={lang.id} className="flex w-full border-b border-b-grey">
+            <li
+              key={lang.id}
+              className={`flex w-full border-b border-b-grey ${
+                clicked ? "tabActive" : ""
+              }`}
+            >
               <button
                 onClick={() => setClicked(lang.name)}
                 className="flex justify-center items-center px-4 py-4 text-white rounded-lg active w-full bg-blue-gray-50"
