@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import Loading from "./loading";
 const api_key = process.env.NEXT_PUBLIC_API_KEY;
 
-export async function getPackages() {
+async function getPackages() {
   const res = await fetch(
     `https://libraries.io/api/platforms?api_key=${api_key}`
   );

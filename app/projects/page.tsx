@@ -2,7 +2,7 @@ import Project from "@/components/Project";
 import React, { Suspense } from "react";
 import Loading from "./loading";
 
-export async function getProjects() {
+async function getProjects() {
   const res = await fetch("https://api.github.com/search/repositories?q=all");
   if (!res.ok) {
     throw new Error("Failed to fetch data");
