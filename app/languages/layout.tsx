@@ -1,5 +1,6 @@
 import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
+import Languages from "./page";
 
 export const metadata: Metadata = {
   title: "OpenGet App",
