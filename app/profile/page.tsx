@@ -6,13 +6,12 @@ import Image from "next/image";
 const Profile = () => {
   const { data: session } = useSession();
   console.log(session);
-  // const { name, email, image } = session?.user;
   if (!session) {
-    return <p>Loading...</p>; // Handle loading state
+    return <p>Loading...</p>;
   }
 
   if (!session.user) {
-    return <p>No user data found.</p>; // Handle case when user data is undefined
+    return <p>No user data found.</p>;
   }
 
   return (
@@ -20,11 +19,11 @@ const Profile = () => {
       <h1>Profile Page</h1>
       {session && (
         <div>
-          <p>Welcome, {session.user.name}!</p>
-          <p>Email: {session.user.email}</p>
+          <p>Welcome, {session.user?.name}!</p>
+          <p>Email: {session.user?.email}</p>
           <p>Avatar:</p>
           <Image
-            src={session.user.image}
+            src={session.user?.image}
             alt="Avatar"
             width="100"
             height="100"
