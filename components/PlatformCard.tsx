@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
 
-const PlatformCard = ({ platform }: any) => {
+export default async function PlatformCard({ platform }: any) {
   return (
     <div
       className={`flex flex-col rounded-md border cursor-pointer h-65 border-grey bg-${platform.color}`}
@@ -33,6 +33,4 @@ const PlatformCard = ({ platform }: any) => {
       </div>
     </div>
   );
-};
-
-export default PlatformCard;
+}

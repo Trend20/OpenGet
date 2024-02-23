@@ -58,7 +58,7 @@ const languages: Languages[] = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
   return (
     <>
       <div className="md:flex w-full">

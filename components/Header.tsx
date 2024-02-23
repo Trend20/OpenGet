@@ -1,19 +1,20 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { GrProjects } from "react-icons/gr";
-import { TbPackages } from "react-icons/tb";
+import React, { useState } from "react";
 import { redirect, usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
-// import { signIn } from "next-auth/react";
 import { LiaCaretDownSolid } from "react-icons/lia";
 import { FaRegUser } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
-import router from "next/router";
 
-const headerLinks = [
+interface HeaderLinks {
+  id: number;
+  linkName: string;
+  linkUrl: string;
+}
+
+const headerLinks: HeaderLinks[] = [
   {
     id: 1,
     linkName: "Communities",
@@ -41,11 +42,10 @@ const headerLinks = [
   },
 ];
 
-const Header = () => {
+const Header: React.FC = () => {
   const pathname = usePathname();
-  const [showDiv, setShowDiv] = useState(false);
+  const [showDiv, setShowDiv] = useState<boolean>(false);
   const { data: session } = useSession();
-
   if (!session) {
     if (session) return redirect("/projects");
   }

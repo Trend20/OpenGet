@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { TbCategoryPlus } from "react-icons/tb";
 
-const Category = () => {
+export default async function Category() {
   return (
     <div className="flex w-full flex-col justify-center items-center">
       <h1 className="flex text-2xl w-1/2 justify-center items-center font-extrabold leading-10- text-boxdark-2">
@@ -24,6 +24,4 @@ const Category = () => {
       </Link>
     </div>
   );
-};
-
-export default Category;
+}
