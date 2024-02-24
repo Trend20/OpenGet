@@ -55,6 +55,11 @@ const languages: ILanguages[] = [
     name: "c++",
     icon: "/icons/cplusplus.svg",
   },
+  {
+    id: 11,
+    name: "typescript",
+    icon: "/icons/typescript.svg",
+  },
 ];
 
 const Sidebar: React.FC = () => {
