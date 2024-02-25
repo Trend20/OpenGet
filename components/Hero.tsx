@@ -15,7 +15,7 @@ export default async function Hero() {
         development libraries. We have a collections of popular libraries that
         helps you ship your applications faster.
       </p>
-      <div className="flex mt-15">
+      <div className="flex mt-10">
         <div className="flex px-3">
           <Link
             href="/projects"

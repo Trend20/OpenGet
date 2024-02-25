@@ -27,9 +27,9 @@ const News: React.FC = () => {
             const storyData = storyResponse.data;
             // Filter stories related to open-source
             if (
-              storyData.title.toLowerCase().includes("open source") ||
-              storyData.title.toLowerCase().includes("code") ||
-              storyData.title.toLowerCase().includes("software")
+              storyData.title.toLowerCase().includes("open source")
+              // storyData.title.toLowerCase().includes("code") ||
+              // storyData.title.toLowerCase().includes("software")
             ) {
               return {
                 title: storyData.title,
