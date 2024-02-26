@@ -8,7 +8,7 @@ import { MdOutlineExplore } from "react-icons/md";
 export default function Hero() {
   const { data: session } = useSession();
   return (
-    <div className="flex w-full flex-col justify-center items-center py-40">
+    <div className="flex w-full flex-col justify-center items-center py-40 px-40">
       <h1 className="flex text-7xl text-center w-3/4 font-extrabold leading-[1.08] text-boxdark-2">
         Tools and Resources for busy programmers. Everything OpenSource!
       </h1>

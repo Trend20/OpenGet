@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NextAuthProvider>
-          <div className="flex min-h-screen flex-col w-full px-40">
+          <div className="flex min-h-screen flex-col w-full">
             <Header />
             {children}
             {/* <Footer /> */}

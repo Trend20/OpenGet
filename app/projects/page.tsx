@@ -17,7 +17,7 @@ const Projects = async () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div className="flex flex-col justify-center items-center py-10">
+        <div className="flex flex-col justify-center items-center py-10 px-40">
           <div className="flex justify-center items-center">
             <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
               Discover Trending OpenSource Projects.

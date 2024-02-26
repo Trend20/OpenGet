@@ -51,7 +51,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <div className="flex w-full items-center justify-between py-10">
+    <div className="flex px-40 w-full items-center justify-between py-10 shadow">
       <div className="flex w-25.5 justify-start items-center">
         <Link href="/" className="flex font-bold w-full text-2xl items-center">
           <div className="flex items-center">

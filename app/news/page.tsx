@@ -60,7 +60,7 @@ const News: React.FC = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="flex w-full flex-col justify-center items-center py-20">
+        <div className="flex w-full flex-col justify-center items-center py-20 px-40">
           <div className="flex justify-center items-center">
             <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
               Top Tech Stories.
