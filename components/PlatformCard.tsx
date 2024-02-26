@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
+import Image from "next/image";
 
 export default async function PlatformCard({ platform }: any) {
   return (

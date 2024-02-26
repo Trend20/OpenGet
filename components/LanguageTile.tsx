@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { GoIssueOpened } from "react-icons/go";
@@ -10,6 +11,14 @@ const LanguageTile = ({ repo }: any) => {
     <div
       className={`flex flex-col rounded-md border cursor-pointer border-grey`}
     >
+      <div className="flex">
+        <Image
+          src={repo.owner.avatar_url}
+          alt={repo.name}
+          width="100"
+          height="100"
+        />
+      </div>
       <div className="flex p-3 items-center justify-between">
         <h3 className="font-bold flex border-none">{repo.name}</h3>
         <Link href={repo.html_url} target="_blank">

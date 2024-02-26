@@ -16,6 +16,7 @@ async function getPackages() {
 
 const Platforms = async () => {
   const packages = await getPackages();
+  console.log(packages);
   return (
     <>
       <Suspense fallback={<Loading />}>
