@@ -43,7 +43,7 @@ const languages: ILanguages[] = [
   {
     id: 8,
     name: "c",
-    icon: "/icons/javascript.svg",
+    icon: "/icons/c.svg",
   },
   {
     id: 9,
