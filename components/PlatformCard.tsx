@@ -9,7 +9,7 @@ export default async function PlatformCard({ platform }: any) {
     >
       <div className="flex p-3 items-center justify-between">
         <h3 className="font-bold flex border-none">{platform.name}</h3>
-        <Link href={`/platform/${platform.name}`}>
+        <Link href={platform.homepage} target="_blank">
           <FiExternalLink color="#0394fc" />
         </Link>
       </div>
@@ -24,8 +24,7 @@ export default async function PlatformCard({ platform }: any) {
       <hr className="border-grey" />
       <div className="flex py-8">
         <Link
-          href={platform.homepage}
-          target="_blank"
+          href={`/platform/${platform.name}`}
           className="flex justify-center items-center border border-meta-5 text-meta-5 rounded-md p-3 w-3/4 m-auto hover:bg-meta-5 hover:text-whiten"
         >
           Explore Package
