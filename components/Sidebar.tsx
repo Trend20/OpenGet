@@ -47,18 +47,23 @@ const languages: ILanguages[] = [
   },
   {
     id: 9,
-    name: "c#",
+    name: "csharp",
     icon: "/icons/csharp.svg",
   },
   {
     id: 10,
-    name: "c++",
-    icon: "/icons/cplusplus.svg",
+    name: "cpp",
+    icon: "/icons/cpp.svg",
   },
   {
     id: 11,
     name: "typescript",
     icon: "/icons/typescript.svg",
+  },
+  {
+    id: 12,
+    name: "golang",
+    icon: "/icons/go.svg",
   },
 ];
 

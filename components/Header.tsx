@@ -27,7 +27,7 @@ const headerLinks: HeaderLinks[] = [
   },
   {
     id: 3,
-    linkName: "Languages",
+    linkName: "Explore",
     linkUrl: "/languages",
   },
   {
