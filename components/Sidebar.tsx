@@ -69,19 +69,17 @@ const languages: ILanguages[] = [
 
 const Sidebar: React.FC = () => {
   const [clicked, setClicked] = useState("javascript");
+  const [isActive, setIsActive] = useState(false);
   return (
     <div className="flex w-full items-start">
       <ul className="flex-col  w-1/4 border border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         {languages.map((lang) => (
-          <li
-            key={lang.id}
-            className={`flex w-full border-b border-b-grey ${
-              clicked ? "tabActive" : ""
-            }`}
-          >
+          <li key={lang.id} className={`flex w-full border-b border-b-grey`}>
             <button
-              onClick={() => setClicked(lang.name)}
-              className="flex justify-center items-center px-4 py-4 text-white rounded-lg active w-full bg-blue-gray-50"
+              onClick={() => {
+                setClicked(lang.name);
+              }}
+              className={`flex justify-center items-center px-4 py-4 text-white rounded-lg active w-full bg-blue-gray-50`}
               aria-current="page"
             >
               <div className="flex w-8 justify-center items-center">
