@@ -15,28 +15,28 @@ interface HeaderLinks {
 }
 
 const headerLinks: HeaderLinks[] = [
+  // {
+  //   id: 1,
+  //   linkName: "Communities",
+  //   linkUrl: "/communities",
+  // },
   {
     id: 1,
-    linkName: "Communities",
-    linkUrl: "/communities",
-  },
-  {
-    id: 2,
     linkName: "Package Managers",
     linkUrl: "/packages",
   },
   {
-    id: 3,
+    id: 2,
     linkName: "Explore",
     linkUrl: "/languages",
   },
+  // {
+  //   id: 4,
+  //   linkName: "Projects",
+  //   linkUrl: "/projects",
+  // },
   {
-    id: 4,
-    linkName: "Projects",
-    linkUrl: "/projects",
-  },
-  {
-    id: 5,
+    id: 3,
     linkName: "Stories",
     linkUrl: "/news",
   },
