@@ -56,6 +56,7 @@ const Header: React.FC = () => {
         <Link href="/" className="flex font-bold w-full text-2xl items-center">
           <div className="flex items-center">
             <Image
+              loading="lazy"
               src="logo.svg"
               alt="logo"
               width="50"
@@ -69,6 +70,7 @@ const Header: React.FC = () => {
       <div className="flex items-center justify-between w-1/2">
         {headerLinks.map((link) => (
           <Link
+            prefetch={false}
             key={link.id}
             href={link.linkUrl}
             className={`flex font-semibold ${
@@ -81,6 +83,7 @@ const Header: React.FC = () => {
         {!session ? (
           <Link
             href="/login"
+            prefetch={false}
             className="flex w-40 bg-boxdark-2 text-white justify-center items-center p-4 rounded-md"
           >
             Get Started
@@ -106,6 +109,7 @@ const Header: React.FC = () => {
               <div className="flex flex-col absolute bg-blue-gray-50 top-20 px-3 py-5 h-25.5 rounded-md items-start- justify-start">
                 <Link
                   href="/profile"
+                  prefetch={false}
                   className="flex items-center rounded-md p-1 hover:bg-meta-4 hover:text-whiten"
                 >
                   <i className="mr-3">
