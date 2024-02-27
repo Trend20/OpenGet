@@ -8,7 +8,7 @@ import Sidebar from "@/components/Sidebar";
 const Languages = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 8;
   const [repositories, setRepositories] = useState([]);
   const [language, setLanguage] = useState("javascript");
 
