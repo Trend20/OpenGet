@@ -1,7 +1,22 @@
 import React from "react";
 
-const Search = () => {
-  return <div>Search</div>;
+interface SearchProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Search = ({ value, onChange }: SearchProps) => {
+  return (
+    <div className="flex w-1/4">
+      <input
+        type="text"
+        placeholder="Search.."
+        value={value}
+        onChange={onChange}
+        className="border border-grey rounded outline-none px-3 py-1 mt-3 mb-5 w-full"
+      />
+    </div>
+  );
 };
 
 export default Search;
