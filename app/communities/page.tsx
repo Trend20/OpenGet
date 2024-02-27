@@ -1,21 +1,37 @@
-import React, { Suspense } from "react";
+"use client";
+
+import React, { Suspense, useEffect, useState } from "react";
 import Loading from "./loading";
+import Pagination from "@/components/Pagination";
 import CommunityCard from "@/components/CommunityCard";
 
-async function getCommunities() {
-  const res = await fetch(
-    `https://api.github.com/search/repositories?q=topic:community`
-  );
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  const data = await res.json();
-  return data.items;
-}
+const Communities = () => {
+  const [communities, setCommunities] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+  const itemsPerPage = 16;
+  useEffect(() => {
+    async function getCommunities(pageNumber: number, itemsPerPage: number) {
+      const res = await fetch(
+        `https://api.github.com/search/repositories?q=topic:community&page=${pageNumber}&per_page=${itemsPerPage}`
+      );
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await res.json();
+      const totalItems = data.total_count;
+      console.log(totalItems);
+      const pages = Math.ceil(totalItems / itemsPerPage);
+      console.log(pages);
+      setTotalPages(pages);
+      setCommunities(data.items);
+    }
+    getCommunities(currentPage + 1, itemsPerPage);
+  }, [currentPage]);
 
-const Communities = async () => {
-  const communities = await getCommunities();
-  console.log(communities);
+  const handlePageChange = ({ selected }: any) => {
+    setCurrentPage(selected);
+  };
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -30,6 +46,11 @@ const Communities = async () => {
               <CommunityCard key={community.name} community={community} />
             ))}
           </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </div>
       </Suspense>
     </>
