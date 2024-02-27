@@ -12,7 +12,7 @@ export default function LanguagesLayout({
 }>) {
   return (
     <div className="flex w-full py-10 px-40">
-      <main>{children}</main>
+      <main className="w-full">{children}</main>
     </div>
   );
 }

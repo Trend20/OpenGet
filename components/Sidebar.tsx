@@ -71,8 +71,8 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ setLang }: SidebarProps) => {
   return (
-    <div className="flex w-full items-start">
-      <ul className="grid grid-cols-3 border border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+    <div className="flex w-70 items-start">
+      <ul className="grid grid-cols-3 border w-full border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         {languages.map((lang) => (
           <li key={lang.id} className={`flex w-full border-b border-b-grey`}>
             <button
@@ -82,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setLang }: SidebarProps) => {
               className={`flex justify-center items-center px-4 py-4 text-white rounded-lg active w-full bg-blue-gray-50`}
               aria-current="page"
             >
-              <div className="flex w-8 justify-center items-center">
+              <div className="flex w-10 justify-center items-center">
                 <Image
                   src={lang.icon}
                   alt={lang.name}

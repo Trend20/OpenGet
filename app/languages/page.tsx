@@ -8,13 +8,9 @@ import Sidebar from "@/components/Sidebar";
 const Languages = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  const itemsPerPage = 16;
+  const itemsPerPage = 4;
   const [repositories, setRepositories] = useState([]);
   const [language, setLanguage] = useState("javascript");
-
-  // const handleSetLanguage = (lang:any) =>{
-  //   setLanguage(lang)
-  // }
 
   useEffect(() => {
     async function fetchRepositories(pageNumber: number, itemsPerPage: number) {
@@ -44,12 +40,12 @@ const Languages = () => {
     setCurrentPage(selected);
   };
   return (
-    <div className="flex w-full">
-      <div className="flex w-1/4">
+    <div className="flex w-full justify-between">
+      <div className="flex">
         <Sidebar setLang={setLanguage} />
       </div>
-      <div className="flex flex-col p-3 w-3/4">
-        <div className="grid w-full grid-cols-4 gap-8">
+      <div className="flex flex-col p-3 border rounded-md border-grey w-full">
+        <div className="grid w-full grid-cols-4 gap-5">
           {repositories.map((repo: any) => (
             <LanguageTile key={repo.id} repo={repo} />
           ))}
