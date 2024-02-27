@@ -28,13 +28,8 @@ const headerLinks: HeaderLinks[] = [
   {
     id: 2,
     linkName: "Explore",
-    linkUrl: "/languages",
+    linkUrl: "/explore",
   },
-  // {
-  //   id: 4,
-  //   linkName: "Projects",
-  //   linkUrl: "/projects",
-  // },
   {
     id: 3,
     linkName: "Stories",
@@ -67,7 +62,7 @@ const Header: React.FC = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-between w-1/2">
+      <div className="flex items-center justify-between w-[570px]">
         {headerLinks.map((link) => (
           <Link
             prefetch={false}
