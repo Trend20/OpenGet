@@ -63,6 +63,56 @@ const languages: ILanguages[] = [
     name: "golang",
     icon: "/icons/go.svg",
   },
+  {
+    id: 13,
+    name: "css",
+    icon: "/icons/css.svg",
+  },
+  {
+    id: 14,
+    name: "html",
+    icon: "/icons/html.svg",
+  },
+  {
+    id: 15,
+    name: "swift",
+    icon: "/icons/swift.svg",
+  },
+  {
+    id: 16,
+    name: "scala",
+    icon: "/icons/scala.svg",
+  },
+  {
+    id: 17,
+    name: "solidity",
+    icon: "/icons/solidity.svg",
+  },
+  {
+    id: 18,
+    name: "groovy",
+    icon: "/icons/groovy.svg",
+  },
+  {
+    id: 19,
+    name: "shell",
+    icon: "/icons/shell.svg",
+  },
+  {
+    id: 20,
+    name: "haskell",
+    icon: "/icons/haskell.svg",
+  },
+  {
+    id: 21,
+    name: "dart",
+    icon: "/icons/dart.svg",
+  },
+  {
+    id: 22,
+    name: "perl",
+    icon: "/icons/perl.svg",
+  },
 ];
 
 interface SidebarProps {
