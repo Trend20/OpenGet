@@ -113,6 +113,11 @@ const languages: ILanguages[] = [
     name: "perl",
     icon: "/icons/perl.svg",
   },
+  {
+    id: 23,
+    name: "npm",
+    icon: "/icons/npm.svg",
+  },
 ];
 
 interface SidebarProps {

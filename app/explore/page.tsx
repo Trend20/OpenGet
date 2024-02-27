@@ -4,6 +4,7 @@ import Loading from "./loading";
 import LanguageTile from "@/components/LanguageTile";
 import Pagination from "@/components/Pagination";
 import Sidebar from "@/components/Sidebar";
+import Search from "@/components/Search";
 
 const Languages = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -11,6 +12,12 @@ const Languages = () => {
   const itemsPerPage = 8;
   const [repositories, setRepositories] = useState([]);
   const [language, setLanguage] = useState("javascript");
+
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
 
   useEffect(() => {
     async function fetchRepositories(pageNumber: number, itemsPerPage: number) {
@@ -36,6 +43,10 @@ const Languages = () => {
     }
     fetchRepositories(currentPage + 1, itemsPerPage);
   }, [language, currentPage]);
+
+  const filteredRepos = repositories.filter((repo: any) =>
+    repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   const handlePageChange = ({ selected }: any) => {
     setCurrentPage(selected);
   };
@@ -44,9 +55,15 @@ const Languages = () => {
       <div className="flex">
         <Sidebar setLang={setLanguage} />
       </div>
-      <div className="flex flex-col p-3 border rounded-md border-grey w-full">
-        <div className="grid w-full grid-cols-4 gap-5">
-          {repositories.map((repo: any) => (
+      <div className="flex flex-col p-3  rounded-md border-grey w-full">
+        <div className="flex items-center w-full justify-between">
+          <h5 className="flex capitalize p-2 font-bold text-sm w-auto bg-meta-4 text-white rounded-md">
+            {language} Projects
+          </h5>
+          <Search value={searchQuery} onChange={handleSearchChange} />
+        </div>
+        <div className="grid w-full grid-cols-4 gap-5 mt-5">
+          {filteredRepos.map((repo: any) => (
             <LanguageTile key={repo.id} repo={repo} />
           ))}
         </div>
