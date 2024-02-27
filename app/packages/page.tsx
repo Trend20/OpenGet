@@ -1,22 +1,36 @@
+"use client";
 import PlatformCard from "@/components/PlatformCard";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Loading from "./loading";
+import Pagination from "@/components/Pagination";
 const api_key = process.env.NEXT_PUBLIC_API_KEY;
 
-async function getPackages() {
-  const res = await fetch(
-    `https://libraries.io/api/platforms?api_key=${api_key}`
-  );
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  const data = await res.json();
-  return data;
-}
+const Platforms = () => {
+  const [packages, setPackages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+  const itemsPerPage = 8;
 
-const Platforms = async () => {
-  const packages = await getPackages();
-  console.log(packages);
+  useEffect(() => {
+    async function getPackages(pageNumber: number, itemsPerPage: number) {
+      const res = await fetch(
+        `https://libraries.io/api/platforms?api_key=${api_key}&page=${pageNumber}&per_page=${itemsPerPage}`
+      );
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await res.json();
+      const totalItems = data.length;
+      const pages = Math.ceil(totalItems / itemsPerPage);
+      setTotalPages(pages);
+      setPackages(data);
+    }
+    getPackages(currentPage + 1, itemsPerPage);
+  }, [currentPage]);
+
+  const handlePageChange = ({ selected }: any) => {
+    setCurrentPage(selected);
+  };
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -31,6 +45,11 @@ const Platforms = async () => {
               <PlatformCard key={platform.name} platform={platform} />
             ))}
           </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </div>
       </Suspense>
     </>
