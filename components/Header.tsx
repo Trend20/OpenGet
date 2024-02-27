@@ -28,13 +28,8 @@ const headerLinks: HeaderLinks[] = [
   {
     id: 2,
     linkName: "Explore",
-    linkUrl: "/languages",
+    linkUrl: "/explore",
   },
-  // {
-  //   id: 4,
-  //   linkName: "Projects",
-  //   linkUrl: "/projects",
-  // },
   {
     id: 3,
     linkName: "Stories",
