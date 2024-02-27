@@ -1,20 +1,17 @@
-import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
-import Languages from "./page";
 
 export const metadata: Metadata = {
-  title: "OpenGet App",
-  description: "OpenSource Web platform where you can find all the libraries.",
+  title: "Languages layout",
+  description: "Application language layout",
 };
 
-export default function RootLayout({
+export default function LanguagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <div className="flex w-full py-10 px-40">
-      <Sidebar />
       <main>{children}</main>
     </div>
   );

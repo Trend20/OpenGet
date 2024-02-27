@@ -1,8 +1,6 @@
 "use client";
-import Languages from "@/app/languages/page";
 import { ILanguages } from "@/types/languages";
 import Image from "next/image";
-import React, { useState } from "react";
 
 const languages: ILanguages[] = [
   {
@@ -67,17 +65,19 @@ const languages: ILanguages[] = [
   },
 ];
 
-const Sidebar: React.FC = () => {
-  const [clicked, setClicked] = useState("javascript");
-  const [isActive, setIsActive] = useState(false);
+interface SidebarProps {
+  setLang: any;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ setLang }: SidebarProps) => {
   return (
     <div className="flex w-full items-start">
-      <ul className="flex-col  w-1/4 border border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
+      <ul className="grid grid-cols-3 border border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         {languages.map((lang) => (
           <li key={lang.id} className={`flex w-full border-b border-b-grey`}>
             <button
               onClick={() => {
-                setClicked(lang.name);
+                setLang(lang.name);
               }}
               className={`flex justify-center items-center px-4 py-4 text-white rounded-lg active w-full bg-blue-gray-50`}
               aria-current="page"
@@ -95,9 +95,6 @@ const Sidebar: React.FC = () => {
           </li>
         ))}
       </ul>
-      <div className="flex border border-grey rounded-md w-3/4">
-        <Languages language={clicked} />
-      </div>
     </div>
   );
 };
