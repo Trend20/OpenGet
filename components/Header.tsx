@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { redirect, usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import { LiaCaretDownSolid } from "react-icons/lia";
 import { FaRegUser } from "react-icons/fa";
@@ -33,6 +33,11 @@ const headerLinks: HeaderLinks[] = [
   },
   {
     id: 3,
+    linkName: "Libraries",
+    linkUrl: "/libraries",
+  },
+  {
+    id: 4,
     linkName: "Stories",
     linkUrl: "/news",
   },
@@ -40,15 +45,25 @@ const headerLinks: HeaderLinks[] = [
 
 const Header: React.FC = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [showDiv, setShowDiv] = useState<boolean>(false);
   const { data: session } = useSession();
   if (!session) {
-    if (session) return redirect("/projects");
+    if (session) return redirect("/explore");
   }
 
+  // user redirect
+  const handleRedirect = () => {
+    if (session) {
+      router.push("/explore");
+    }
+  };
   return (
     <div className="flex px-40 w-full items-center h-22.5 justify-between py-3 shadow fixed z-99 bg-black">
-      <div className="flex w-25.5 justify-start items-center">
+      <div
+        className="flex 1/4 justify-start items-center"
+        onClick={handleRedirect}
+      >
         <Link href="/" className="flex font-bold w-full text-2xl items-center">
           <div className="flex items-center">
             <Image
@@ -63,7 +78,7 @@ const Header: React.FC = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-between w-[570px]">
+      <div className="flex items-center justify-between w-1/2">
         {headerLinks.map((link) => (
           <Link
             prefetch={false}
