@@ -26,11 +26,7 @@ const News: React.FC = () => {
             );
             const storyData = storyResponse.data;
             // Filter stories related to open-source
-            if (
-              storyData.title.toLowerCase().includes("open source")
-              // storyData.title.toLowerCase().includes("code") ||
-              // storyData.title.toLowerCase().includes("software")
-            ) {
+            if (storyData.title.toLowerCase().includes("tech")) {
               return {
                 title: storyData.title,
                 url: storyData.url,
@@ -44,7 +40,6 @@ const News: React.FC = () => {
         );
 
         setLoading(false);
-        // Remove null values and set open source stories state
         setOpenSourceStories(openSourceStoriesData.filter(Boolean));
       } catch (error) {
         console.error("Error fetching open source stories:", error);
@@ -60,7 +55,7 @@ const News: React.FC = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="flex w-full flex-col justify-center items-center py-20 px-40">
+        <div className="flex w-full flex-col justify-center items-center py-20 px-40 mt-20">
           <div className="flex justify-center items-center">
             <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
               Top Tech Stories.

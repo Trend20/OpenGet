@@ -13,7 +13,7 @@ const Search = ({ value, onChange }: SearchProps) => {
         placeholder="Search.."
         value={value}
         onChange={onChange}
-        className="border border-grey rounded outline-none px-3 py-1 mt-3 mb-5 w-full"
+        className="border border-grey rounded outline-none px-3 py-2 mt-3 mb-5 w-full"
       />
     </div>
   );

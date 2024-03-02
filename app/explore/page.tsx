@@ -51,18 +51,18 @@ const Languages = () => {
     setCurrentPage(selected);
   };
   return (
-    <div className="flex w-full justify-between">
+    <div className="flex w-full justify-between mt-20">
       <div className="flex">
         <Sidebar setLang={setLanguage} />
       </div>
-      <div className="flex flex-col p-3  rounded-md border-grey w-full">
+      <div className="flex flex-col p-3  rounded-md border border-grey w-full">
         <div className="flex items-center w-full justify-between">
-          <h5 className="flex capitalize p-2 font-bold text-sm w-auto bg-meta-4 text-white rounded-md">
+          <h5 className="flex capitalize px-3 py-2 font-bold text-lg w-auto bg-meta-4 text-white rounded-md">
             {language} Projects
           </h5>
           <Search value={searchQuery} onChange={handleSearchChange} />
         </div>
-        <div className="grid w-full grid-cols-4 gap-5 mt-5">
+        <div className="grid w-full grid-cols-4 gap-8 mt-5">
           {filteredRepos.map((repo: any) => (
             <LanguageTile key={repo.id} repo={repo} />
           ))}

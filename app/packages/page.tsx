@@ -34,7 +34,7 @@ const Platforms = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div className="flex w-full flex-col justify-center items-center py-20 px-40">
+        <div className="flex w-full flex-col justify-center items-center py-20 px-40 mt-20">
           <div className="flex justify-center items-center">
             <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
               Discover Popular Package Managers.

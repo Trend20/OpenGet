@@ -2,13 +2,11 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
-import { FaGithub } from "react-icons/fa6";
 import { MdOutlineExplore } from "react-icons/md";
 
 export default function Hero() {
-  const { data: session } = useSession();
   return (
-    <div className="flex w-full flex-col justify-center items-center py-40 px-40">
+    <div className="flex w-full flex-col justify-center items-center py-40 px-40 mt-20">
       <h1 className="flex text-7xl text-center w-3/4 font-extrabold leading-[1.08] text-boxdark-2">
         Tools and Resources for busy programmers. Everything OpenSource!
       </h1>
@@ -31,20 +29,6 @@ export default function Hero() {
             Explore Projects
           </Link>
         </div>
-        {!session && (
-          <div className="flex px-3">
-            <Link
-              href="/login"
-              prefetch={false}
-              className="flex mt-3 bg-boxdark-2 text-sm uppercase text-white justify-center items-center p-4 rounded-md"
-            >
-              <i className="mr-3">
-                <FaGithub size={25} />
-              </i>
-              Connect github
-            </Link>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -129,7 +129,10 @@ const Sidebar: React.FC<SidebarProps> = ({ setLang }: SidebarProps) => {
     <div className="flex w-70 items-start">
       <ul className="grid grid-cols-3 border w-full border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         {languages.map((lang) => (
-          <li key={lang.id} className={`flex w-full border-b border-b-grey`}>
+          <li
+            key={lang.id}
+            className={`flex w-full border-b border-b-grey p-3`}
+          >
             <button
               onClick={() => {
                 setLang(lang.name);

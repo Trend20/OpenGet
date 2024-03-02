@@ -7,6 +7,7 @@ import { useSession, signOut } from "next-auth/react";
 import { LiaCaretDownSolid } from "react-icons/lia";
 import { FaRegUser } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
+import { FaGithub } from "react-icons/fa6";
 
 interface HeaderLinks {
   id: number;
@@ -46,7 +47,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <div className="flex px-40 w-full items-center justify-between py-10 shadow">
+    <div className="flex px-40 w-full items-center h-22.5 justify-between py-3 shadow fixed z-99 bg-black">
       <div className="flex w-25.5 justify-start items-center">
         <Link href="/" className="flex font-bold w-full text-2xl items-center">
           <div className="flex items-center">
@@ -58,7 +59,7 @@ const Header: React.FC = () => {
               height="50"
               className="flex w-8.5"
             />
-            <p className="flex text-black-2">OpenGet</p>
+            <p className="flex text-meta-5">OpenGet</p>
           </div>
         </Link>
       </div>
@@ -68,7 +69,7 @@ const Header: React.FC = () => {
             prefetch={false}
             key={link.id}
             href={link.linkUrl}
-            className={`flex font-semibold ${
+            className={`flex font-semibold text-whiten ${
               pathname === link.linkUrl ? "active" : ""
             }`}
           >
@@ -76,13 +77,18 @@ const Header: React.FC = () => {
           </Link>
         ))}
         {!session ? (
-          <Link
-            href="/login"
-            prefetch={false}
-            className="flex w-40 bg-boxdark-2 text-white justify-center items-center p-4 rounded-md"
-          >
-            Get Started
-          </Link>
+          <div className="flex px-3">
+            <Link
+              href="/login"
+              prefetch={false}
+              className="flex mt-3 bg-boxdark-2 text-sm uppercase border-2 border-meta-5 text-white justify-center items-center p-4 rounded-md"
+            >
+              <i className="mr-3">
+                <FaGithub size={25} />
+              </i>
+              Connect github
+            </Link>
+          </div>
         ) : (
           <div className="flex cursor-pointer flex-col">
             <div
