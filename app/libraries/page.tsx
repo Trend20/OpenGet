@@ -50,7 +50,7 @@ const Libraries = () => {
         {tech.map((item) => (
           <Link
             href={`/libraries/${item.name}`}
-            className="flex flex-col bg-grey p-5 justify-center items-center rounded-md"
+            className="flex flex-col bg-blue-gray-50 p-5 justify-center items-center rounded-md"
             key={item.id}
           >
             <Image

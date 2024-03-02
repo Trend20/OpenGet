@@ -11,16 +11,17 @@ const LanguageTile = ({ repo }: any) => {
     <div
       className={`flex flex-col rounded-md border cursor-pointer border-grey`}
     >
-      <div className="flex">
-        <Image
-          src={repo.owner.avatar_url}
-          alt={repo.name}
-          width="100"
-          height="100"
-        />
-      </div>
       <div className="flex p-3 items-center justify-between">
-        <h3 className="font-bold flex border-none">{repo.name}</h3>
+        <div className="flex items-center">
+          <Image
+            src={repo.owner.avatar_url}
+            alt={repo.name}
+            width="100"
+            height="100"
+            className="flex w-10.5 rounded-full"
+          />
+          <h3 className="font-bold flex border-none ml-2">{repo.name}</h3>
+        </div>
         <Link href={repo.html_url} target="_blank">
           <FiExternalLink color="#0394fc" size={20} />
         </Link>
