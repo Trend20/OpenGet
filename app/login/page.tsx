@@ -12,7 +12,7 @@ const Login = async () => {
 
   if (session) return redirect("/profile");
   return (
-    <div className="flex m-auto justify-between items-center py-10 px-10 mt-30 w-1/2 h-[300] bg-bodydark1 rounded-md">
+    <div className="flex m-auto justify-between items-center py-20 px-10 mt-40 w-1/2 h-[300] bg-bodydark1 rounded-md">
       <div className="flex flex-col w-3/4">
         <h1 className="text-2xl font-bold text-black-2">Welcome to OpenGet!</h1>
         <p className="w-3/4 mt-5">
@@ -21,15 +21,15 @@ const Login = async () => {
         </p>
         <div className="flex flex-col mt-7">
           <p className="flex items-center px-5 py-2">
-            <i className="mr-5 text-black-2">
-              <TbHexagonNumber1 size={20} />
+            <i className="mr-5">
+              <TbHexagonNumber1 size={20} fill="#259ae6" />
             </i>{" "}
             No access to your private repositories.
           </p>
           <p className="flex items-center px-5 py-2">
             {" "}
-            <i className="mr-5 text-black-2">
-              <TbHexagonNumber2 size={20} />
+            <i className="mr-5">
+              <TbHexagonNumber2 size={20} fill="#259ae6" />
             </i>
             No spam email.
           </p>

@@ -84,7 +84,7 @@ const Header: React.FC = () => {
               className="flex mt-3 bg-boxdark-2 text-sm uppercase border-2 border-meta-5 text-white justify-center items-center p-4 rounded-md"
             >
               <i className="mr-3">
-                <FaGithub size={25} />
+                <FaGithub size={25} fill="#259ae6" />
               </i>
               Connect github
             </Link>

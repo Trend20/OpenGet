@@ -5,10 +5,10 @@ import { signIn } from "next-auth/react";
 
 const AuthButton = () => {
   return (
-    <div className="flex flex-col w-96">
+    <div className="flex flex-col w-72">
       <button
         onClick={() => signIn("github")}
-        className="flex w-full rounded-md p-5 text-white bg-black-2 items-center"
+        className="flex w-full rounded-md p-5 text-white bg-meta-4 items-center"
       >
         <div className="flex w-10">
           <Image
