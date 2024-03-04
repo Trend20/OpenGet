@@ -28,6 +28,61 @@ const javascriptOptions = [
     name: "scroll",
     value: "scroll",
   },
+  {
+    id: 6,
+    name: "toast",
+    value: "toast",
+  },
+  {
+    id: 7,
+    name: "alert",
+    value: "alert",
+  },
+  {
+    id: 8,
+    name: "notification",
+    value: "notification",
+  },
+  {
+    id: 9,
+    name: "encrypt",
+    value: "encrypt",
+  },
+  {
+    id: 10,
+    name: "json",
+    value: "json",
+  },
+  {
+    id: 11,
+    name: "modal",
+    value: "modal",
+  },
+  {
+    id: 12,
+    name: "convert",
+    value: "convert",
+  },
+  {
+    id: 13,
+    name: "token",
+    value: "token",
+  },
+  {
+    id: 14,
+    name: "cors",
+    value: "cors",
+  },
+  {
+    id: 15,
+    name: "http",
+    value: "http",
+  },
+  {
+    id: 16,
+    name: "middleware",
+    value: "middleware",
+  },
 ];
 
 const Javascript = () => {
@@ -78,7 +133,6 @@ const Javascript = () => {
             onChange={handleSelectChange}
             className="flex outline-none rounded-md p-3 border border-grey"
           >
-            <option value="">Select an option</option>
             {javascriptOptions.map((item) => (
               <option key={item.id} value={item.value}>
                 {item.name}
