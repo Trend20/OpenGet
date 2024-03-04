@@ -22,12 +22,12 @@ const Profile = () => {
           <p>Welcome, {session.user?.name}!</p>
           <p>Email: {session.user?.email}</p>
           <p>Avatar:</p>
-          <Image
-            src={session.user?.image}
+          {/* <Image
+            src={session?.user?.image}
             alt="Avatar"
             width="100"
             height="100"
-          />
+          /> */}
         </div>
       )}
       {!session && <p>Please log in to view this page.</p>}
