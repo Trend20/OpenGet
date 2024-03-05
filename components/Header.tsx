@@ -16,11 +16,6 @@ interface HeaderLinks {
 }
 
 const headerLinks: HeaderLinks[] = [
-  // {
-  //   id: 1,
-  //   linkName: "Communities",
-  //   linkUrl: "/communities",
-  // },
   {
     id: 1,
     linkName: "Package Managers",
@@ -59,7 +54,7 @@ const Header: React.FC = () => {
     }
   };
   return (
-    <div className="flex px-40 w-full items-center h-22.5 justify-between py-3 shadow fixed z-99 bg-black">
+    <div className="flex px-40 w-full items-center justify-between py-3 shadow fixed z-99 bg-black">
       <div
         className="flex 1/4 justify-start items-center"
         onClick={handleRedirect}

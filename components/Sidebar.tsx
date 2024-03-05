@@ -113,11 +113,6 @@ const languages: ILanguages[] = [
     name: "perl",
     icon: "/icons/perl.svg",
   },
-  {
-    id: 23,
-    name: "npm",
-    icon: "/icons/npm.svg",
-  },
 ];
 
 interface SidebarProps {
@@ -137,16 +132,16 @@ const Sidebar: React.FC<SidebarProps> = ({ setLang }: SidebarProps) => {
               onClick={() => {
                 setLang(lang.name);
               }}
-              className={`flex justify-center items-center px-4 py-4 text-white rounded-lg active w-full bg-blue-gray-50`}
+              className={`flex justify-center items-center px-2 py-4 text-white rounded-lg active w-full`}
               aria-current="page"
             >
-              <div className="flex w-10 justify-center items-center">
+              <div className="flex w-22.5 justify-center items-center">
                 <Image
                   src={lang.icon}
                   alt={lang.name}
                   width="100"
                   height="100"
-                  className="w-full flex"
+                  className="flex w-42.5"
                 />
               </div>
             </button>
