@@ -26,7 +26,7 @@ const News: React.FC = () => {
             );
             const storyData = storyResponse.data;
             // Filter stories related to open-source
-            if (storyData.title.toLowerCase().includes("tech")) {
+            if (storyData.title.toLowerCase().includes("open source")) {
               return {
                 title: storyData.title,
                 url: storyData.url,
@@ -58,7 +58,7 @@ const News: React.FC = () => {
         <div className="flex w-full flex-col justify-center items-center py-20 px-40 mt-20">
           <div className="flex justify-center items-center">
             <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
-              Top Tech Stories.
+              OpenSource Stories.
             </h1>
           </div>
           <div className="grid w-full gap-8 py-10">

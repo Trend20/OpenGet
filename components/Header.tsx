@@ -33,8 +33,8 @@ const headerLinks: HeaderLinks[] = [
   },
   {
     id: 4,
-    linkName: "Podcast",
-    linkUrl: "/podcast",
+    linkName: "Podcasts",
+    linkUrl: "/podcasts",
   },
 ];
 
