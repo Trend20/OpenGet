@@ -5,11 +5,11 @@ import { MdOutlineExplore } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <div className="flex w-full flex-col justify-center m-auto items-center py-40 px-40 mt-10">
-      <h1 className="text-7xl text-center w-3/4 font-extrabold py-5 leading-[1.08] text-boxdark-2">
-        Tools and Resources for busy programmers. Everything OpenSource!
+    <div className="flex w-full flex-col justify-center m-auto items-center py-40 px-40 mt-30">
+      <h1 className="text-7xl text-center w-3/4 font-extrabold py-5 leading-[1.08] text-boxdark-2 mt-10">
+        Everything OpenSource!
       </h1>
-      <p className="text-lg text-center mt-10 w-1/2">
+      <p className="text-lg text-center w-1/2">
         Welcome to the world of OpenSource Software! We help you to speed up
         your development process by reducing the time you take to search for
         development libraries. We have a collections of popular libraries that

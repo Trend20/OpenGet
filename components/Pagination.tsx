@@ -22,8 +22,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
           className={styles["react-paginate"]}
         />
       </div>
-      <p className="flex p-2 rounded-md border border-green-50">
-        Total {totalPages} pages
+      <p className="flex p-2 rounded-md border border-grey bg-blue-gray-50">
+        {totalPages} pages
       </p>
     </div>
   );
