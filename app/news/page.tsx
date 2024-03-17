@@ -1,60 +1,42 @@
-"use client";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import Loading from "./loading";
 import axios from "axios";
 import NewsCard from "@/components/NewsCard";
 import { Story } from "@/types/story";
 
-const News: React.FC = () => {
-  const [openSourceStories, setOpenSourceStories] = useState<Story[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fetchOpenSourceStories = async () => {
-      setLoading(true);
-      try {
-        const topStoriesResponse = await axios.get(
-          "https://hacker-news.firebaseio.com/v0/topstories.json"
-        );
-        setLoading(false);
-        const topStoryIds = topStoriesResponse.data;
-
-        const openSourceStoriesData = await Promise.all(
-          topStoryIds.map(async (storyId: any) => {
-            const storyResponse = await axios.get(
-              `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
-            );
-            const storyData = storyResponse.data;
-            // Filter stories related to open-source
-            if (storyData.title.toLowerCase().includes("open source")) {
-              return {
-                title: storyData.title,
-                url: storyData.url,
-                score: storyData.score,
-                author: storyData.by,
-                type: storyData.type,
-              };
-            }
-            return null;
-          })
-        );
-
-        setLoading(false);
-        setOpenSourceStories(openSourceStoriesData.filter(Boolean));
-      } catch (error) {
-        console.error("Error fetching open source stories:", error);
+async function getData() {
+  const topStoriesResponse = await axios.get(
+    "https://hacker-news.firebaseio.com/v0/topstories.json"
+  );
+  const topStoryIds = topStoriesResponse.data;
+  const openSourceStoriesData = await Promise.all(
+    topStoryIds.map(async (storyId: any) => {
+      const storyResponse = await axios.get(
+        `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
+      );
+      const storyData = storyResponse.data;
+      // Filter stories related to open-source
+      if (storyData.title.toLowerCase().includes("open source")) {
+        return {
+          title: storyData.title,
+          url: storyData.url,
+          score: storyData.score,
+          author: storyData.by,
+          type: storyData.type,
+        };
       }
-      setLoading(false);
-    };
+      return null;
+    })
+  );
+  return openSourceStoriesData.filter(Boolean);
+}
 
-    fetchOpenSourceStories();
-  }, []);
+const News = async () => {
+  const openSourceStories = await getData();
+
   return (
     <>
-      {/* <Suspense fallback={<Loading />}> */}
-      {loading ? (
-        <Loading />
-      ) : (
+      <Suspense fallback={<Loading />}>
         <div className="flex w-full flex-col justify-center items-center py-20 px-40 mt-20">
           <div className="flex justify-center items-center">
             <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
@@ -67,8 +49,7 @@ const News: React.FC = () => {
             ))}
           </div>
         </div>
-      )}
-      {/* </Suspense> */}
+      </Suspense>
     </>
   );
 };
