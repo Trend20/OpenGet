@@ -33,7 +33,7 @@ async function getData() {
 
 const News = async () => {
   const openSourceStories = await getData();
-
+  console.log(openSourceStories);
   return (
     <>
       <Suspense fallback={<Loading />}>
