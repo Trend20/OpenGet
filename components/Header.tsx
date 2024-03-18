@@ -106,7 +106,7 @@ const Header: React.FC = () => {
               onClick={() => setShowDiv((prev) => !prev)}
             >
               <Image
-                src={session.user?.image}
+                src={session.user?.image!}
                 alt="Avatar"
                 width="100"
                 height="100"
