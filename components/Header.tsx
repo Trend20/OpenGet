@@ -23,7 +23,7 @@ const headerLinks: HeaderLinks[] = [
   },
   {
     id: 2,
-    linkName: "Explore",
+    linkName: "Projects",
     linkUrl: "/explore",
   },
   {
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
             <Link
               href="/login"
               prefetch={false}
-              className="flex mt-3 bg-boxdark-2 text-sm uppercase border-2 border-meta-5 text-white justify-center items-center p-4 rounded-md"
+              className="flex mt-3 bg-boxdark-2 text-sm uppercase border-2 border-meta-5 text-white justify-center items-center p-3 rounded-md"
             >
               <i className="mr-3">
                 <FaGithub size={25} fill="#259ae6" />
