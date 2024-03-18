@@ -1,12 +1,13 @@
-import { CircleLoader } from "react-spinners";
+import PackageSkeleton from "@/components/skelletons/PackageSkeleton";
 
 export default function Loading() {
   return (
-    <>
-      <div className="h-10 w-48 animate-pulse rounded-md bg-stone-100 dark:bg-stone-800" />
-      <div className="flex h-full w-full items-center justify-center">
-        <CircleLoader color="#65aee6" />
+    <main className="m-auto mt-50 w-full px-40">
+      <div className="grid grid-cols-4 justify-center gap-5 flex-wrap">
+        {Array.from(Array(8).keys()).map((element) => (
+          <PackageSkeleton key={element} />
+        ))}
       </div>
-    </>
+    </main>
   );
 }
