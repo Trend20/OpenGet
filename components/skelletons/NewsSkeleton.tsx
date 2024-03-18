@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const NewsSkeleton = () => {
   return (
-    <div className="flex items-center rounded-md border  min-h-40 border-grey p-3 justify-between w-full">
+    <div className="flex items-center rounded-md border bg-blue-gray-300  min-h-30 border-grey p-3 justify-between w-full animate-pulse">
       <div className="flex flex-col">
-        <h3 className="leading-8 font-bold bg-blue-gray-200"></h3>
-        <p className="leading-8 bg-blue-gray-200"></p>
-        <p className="leading-8 bg-blue-gray-200"></p>
-        <p className="leading-8 bg-blue-gray-200"></p>
+        <h3 className="leading-8 font-bold p-5"></h3>
+        <p className="leading-8"></p>
+        <p className="leading-8"></p>
+        <p className="leading-8"></p>
       </div>
       <div className="flex w-30 justify-center items-center">
         <Link
