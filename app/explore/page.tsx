@@ -1,6 +1,5 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
-import Loading from "./loading";
 import LanguageTile from "@/components/LanguageTile";
 import Pagination from "@/components/Pagination";
 import Sidebar from "@/components/Sidebar";

@@ -4,10 +4,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { redirect, usePathname, useRouter } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
-import { LiaCaretDownSolid } from "react-icons/lia";
-import { FaRegUser } from "react-icons/fa";
-import { TbLogout } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa6";
+// import { LiaCaretDownSolid } from "react-icons/lia";
+// import { FaRegUser } from "react-icons/fa";
+// import { TbLogout } from "react-icons/tb";
+// import { FaGithub } from "react-icons/fa6";
 
 interface HeaderLinks {
   id: number;
@@ -41,23 +41,23 @@ const headerLinks: HeaderLinks[] = [
 const Header: React.FC = () => {
   const pathname = usePathname();
   const router = useRouter();
-  const [showDiv, setShowDiv] = useState<boolean>(false);
+  // const [showDiv, setShowDiv] = useState<boolean>(false);
   const { data: session } = useSession();
   if (!session) {
     if (session) return redirect("/explore");
   }
 
   // user redirect
-  const handleRedirect = () => {
-    if (session) {
-      router.push("/explore");
-    }
-  };
+  // const handleRedirect = () => {
+  //   if (session) {
+  //     router.push("/explore");
+  //   }
+  // };
   return (
-    <div className="flex px-40 w-full items-center justify-between py-3 shadow fixed z-99 bg-black">
+    <div className="flex px-40 w-full items-center justify-between py-5 shadow fixed z-99 bg-black">
       <div
         className="flex 1/4 justify-start items-center"
-        onClick={handleRedirect}
+        // onClick={handleRedirect}
       >
         <Link href="/" className="flex font-bold w-full text-2xl items-center">
           <div className="flex items-center">
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-between w-1/2">
+      <div className="flex items-center justify-between w-1/4">
         {headerLinks.map((link) => (
           <Link
             prefetch={false}
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
             {link.linkName}
           </Link>
         ))}
-        {!session ? (
+        {/* {!session ? (
           <div className="flex px-3">
             <Link
               href="/login"
@@ -142,7 +142,7 @@ const Header: React.FC = () => {
               ""
             )}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
