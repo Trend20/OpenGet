@@ -69,16 +69,6 @@ const LanguageTile = ({ repo }: any) => {
         </p>{" "}
         <p>{repo.forks_count}</p>
       </div>
-      <hr className="border-grey" />
-      <div className="flex py-8">
-        <Link
-          href={repo.html_url}
-          target="_blank"
-          className="flex justify-center items-center border border-meta-5 text-meta-5 rounded-md p-3 w-3/4 m-auto hover:bg-meta-5 hover:text-whiten"
-        >
-          GitHub Link
-        </Link>
-      </div>
     </div>
   );
 };
