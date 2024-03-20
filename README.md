@@ -1,7 +1,7 @@
 <h1 align="center">OpenGet - Open Source Projects, Podcasts and Open Source Stories</h1>
 
 <p align="center">
-  <img src="/logo.svg" alt="openget-logo" width="128px" height="128px"/>
+  <img src="/public/logo.svg" alt="openget-logo" width="128px" height="128px"/>
   <br>
   <i>An Open Source NextJS platform, integrated with GitHub and lists all
     <br> Open Source projects which can be filtered based on the technology.</i>
@@ -10,11 +10,6 @@
 
 <p align="center">
   <a href="https://open-get.vercel.app/"><strong>open-get.vercel.app/</strong></a>
-  <br>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Trend20/OpenGet">Website Repo</a>
   <br>
 </p>
 <hr>
