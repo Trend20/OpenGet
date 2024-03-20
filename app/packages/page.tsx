@@ -36,7 +36,7 @@ const Platforms = () => {
     setCurrentPage(selected);
   };
 
-  console.log(packages);
+  // console.log(packages);
 
   return (
     <>
