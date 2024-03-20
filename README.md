@@ -16,4 +16,4 @@
 
 **We are open to collaboration.** Please check open issues in the above repos if you want to contribute, or open a new one if you have an idea you'd like to discuss.
 
-OpenGet is a free website for open-source projects. We are tightly integrated with Github, allowing us to automatically get access to almost every open-source project out there.
+OpenGet is a free website for open-source projects. We are integrated with Github, allowing us to automatically get access to almost every open-source project out there.
