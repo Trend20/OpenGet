@@ -18,10 +18,10 @@ export default function Hero() {
           <Link
             href="/explore"
             prefetch={false}
-            className="flex mt-3 bg-meta-4 text-sm md:text-base uppercase text-white justify-center items-center p-4 rounded-md"
+            className="flex mt-3 bg-black text-sm md:text-base text-white justify-center items-center p-4 rounded-md"
           >
             <i className="mr-3">
-              <MdOutlineExplore size={25} />
+              <MdOutlineExplore size={20} />
             </i>
             Explore Projects
           </Link>

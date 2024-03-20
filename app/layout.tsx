@@ -21,7 +21,7 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col w-full">
             <Header />
             <main className="flex flex-col w-full z-1 mt-10">{children}</main>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </NextAuthProvider>
       </body>

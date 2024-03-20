@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { redirect, usePathname, useRouter } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
-import { FaGithub } from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
 
 interface HeaderLinks {
   id: number;
@@ -28,6 +28,11 @@ const headerLinks: HeaderLinks[] = [
     linkName: "Podcasts",
     linkUrl: "/podcasts",
   },
+  {
+    id: 4,
+    linkName: "About",
+    linkUrl: "/about",
+  },
 ];
 
 const Header: React.FC = () => {
@@ -37,8 +42,8 @@ const Header: React.FC = () => {
     if (session) return redirect("/explore");
   }
   return (
-    <div className="flex px-40 w-full items-center justify-between py-5 shadow fixed z-99 bg-black">
-      <div className="flex 1/4 justify-start items-center">
+    <div className="flex px-40 w-full items-center justify-between py-5 shadow z-99">
+      <div className="flex w-1/4 justify-start items-center">
         <Link href="/" className="flex font-bold w-full text-2xl items-center">
           <div className="flex items-center">
             <Image
@@ -49,7 +54,7 @@ const Header: React.FC = () => {
               height="50"
               className="flex w-8.5"
             />
-            <p className="flex text-meta-5">OpenGet</p>
+            <p className="flex text-black">OpenGet</p>
           </div>
         </Link>
       </div>
@@ -59,7 +64,7 @@ const Header: React.FC = () => {
             prefetch={false}
             key={link.id}
             href={link.linkUrl}
-            className={`flex text-lg text-whiten ${
+            className={`flex text-lg text-black ${
               pathname === link.linkUrl ? "active" : ""
             }`}
           >
@@ -68,10 +73,20 @@ const Header: React.FC = () => {
         ))}
       </div>
 
-      <div className="flex w-1/4 justify-end">
+      <div className="flex w-1/4 space-x-5 justify-end">
         <Link href={"https://github.com/Trend20/OpenGet"} target="_blank">
           <i>
-            <FaGithub size={30} fill="#0394fc" />
+            <FaGithub size={20} fill="#1c2434" />
+          </i>
+        </Link>
+        <Link href={"https://github.com/Trend20/OpenGet"} target="_blank">
+          <i>
+            <FaDiscord size={20} fill="#1c2434" />
+          </i>
+        </Link>
+        <Link href={"https://github.com/Trend20/OpenGet"} target="_blank">
+          <i>
+            <FaXTwitter size={20} fill="#1c2434" />
           </i>
         </Link>
       </div>

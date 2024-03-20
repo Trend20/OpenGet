@@ -7,8 +7,8 @@ import { LuPodcast } from "react-icons/lu";
 
 export default function Discover() {
   return (
-    <div className="bg-black w-full py-20 sm:py-10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-black w-full px-40 py-20 sm:py-10">
+      <div className="mx-auto max-w-7xl lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Discover, Learn, and Engage with Open Source
