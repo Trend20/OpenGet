@@ -19,7 +19,7 @@ const headerLinks: HeaderLinks[] = [
     linkUrl: "/explore",
   },
   {
-    id: 3,
+    id: 2,
     linkName: "Stories",
     linkUrl: "/news",
   },

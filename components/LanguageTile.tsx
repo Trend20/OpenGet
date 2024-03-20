@@ -26,20 +26,22 @@ const LanguageTile = ({ repo }: any) => {
           <h3 className="font-bold flex border-none ml-2">{repo.name}</h3>
         </div>
         <div className="flex space-x-3">
-          <Link
-            href={
-              repo.homepage !== "" || repo.homepage !== null
-                ? repo.homepage
-                : repo.html_url
-            }
-            target="_blank"
-          >
-            <GoGlobe color="#0394fc" size={20} />
-          </Link>
+          {repo.homepage !== "" && repo.homepage !== null ? (
+            <Link href={repo.homepage} target="_blank">
+              <GoGlobe color="#0394fc" size={20} />
+            </Link>
+          ) : (
+            <Link href={repo.html_url} target="_blank">
+              <GoGlobe color="#0394fc" size={20} />
+            </Link>
+          )}
           <Link href={repo.html_url} target="_blank">
             <FaGithub color="#0394fc" size={20} />
           </Link>
         </div>
+      </div>
+      <div className="flex p-3 items-center justify-between">
+        <p>{repo.description}</p>
       </div>
       <hr className="border-grey" />
       <div className="flex p-3 items-center justify-between">
