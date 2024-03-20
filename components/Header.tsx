@@ -53,13 +53,13 @@ const Header: React.FC = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center space-x-5 justify-center w-1/4">
+      <div className="flex items-center space-x-8 justify-center w-1/4">
         {headerLinks.map((link) => (
           <Link
             prefetch={false}
             key={link.id}
             href={link.linkUrl}
-            className={`flex font-semibold text-whiten ${
+            className={`flex text-lg text-whiten ${
               pathname === link.linkUrl ? "active" : ""
             }`}
           >
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       <div className="flex w-1/4 justify-end">
         <Link href={"https://github.com/Trend20/OpenGet"} target="_blank">
           <i>
-            <FaGithub size={30} />
+            <FaGithub size={30} fill="#0394fc" />
           </i>
         </Link>
       </div>
