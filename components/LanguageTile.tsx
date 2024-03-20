@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { FiExternalLink } from "react-icons/fi";
 import { GoIssueOpened } from "react-icons/go";
 import { MdOutlineStar } from "react-icons/md";
 import { PiGitForkBold } from "react-icons/pi";
+import { GoGlobe } from "react-icons/go";
+import { FaGithub } from "react-icons/fa6";
 
 const LanguageTile = ({ repo }: any) => {
   return (
@@ -13,18 +14,32 @@ const LanguageTile = ({ repo }: any) => {
     >
       <div className="flex p-3 items-center justify-between">
         <div className="flex items-center">
-          <Image
-            src={repo.owner.avatar_url}
-            alt={repo.name}
-            width="100"
-            height="100"
-            className="flex w-10.5 rounded-full"
-          />
+          <div className="flex bg-blue-gray-100 p-2 rounded-full">
+            <Image
+              src={repo.owner.avatar_url}
+              alt={repo.name}
+              width="100"
+              height="100"
+              className="flex w-10.5 rounded-full"
+            />
+          </div>
           <h3 className="font-bold flex border-none ml-2">{repo.name}</h3>
         </div>
-        <Link href={repo.html_url} target="_blank">
-          <FiExternalLink color="#0394fc" size={20} />
-        </Link>
+        <div className="flex space-x-3">
+          <Link
+            href={
+              repo.homepage !== "" || repo.homepage !== null
+                ? repo.homepage
+                : repo.html_url
+            }
+            target="_blank"
+          >
+            <GoGlobe color="#0394fc" size={20} />
+          </Link>
+          <Link href={repo.html_url} target="_blank">
+            <FaGithub color="#0394fc" size={20} />
+          </Link>
+        </div>
       </div>
       <hr className="border-grey" />
       <div className="flex p-3 items-center justify-between">
