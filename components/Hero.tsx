@@ -5,7 +5,7 @@ import { MdOutlineExplore } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <div className="flex w-full flex-col justify-center m-auto items-center py-40 px-40 mt-30">
+    <div className="flex w-full flex-col justify-center m-auto items-center py-20 px-40 mt-20">
       <h1 className="text-7xl text-center w-3/4 font-extrabold py-5 leading-[1.08] text-boxdark-2 mt-10">
         Explore the World of Open Source
       </h1>
