@@ -5,8 +5,8 @@ import React from "react";
 const UIPrompt = () => {
   return (
     <div className="bg-black w-full px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40">
-      <div className="mx-auto py-12 flex sm:pt-16 lg:py-24 xl:py-40">
-        <div className="lg:grid lg:grid-cols-1 lg:gap-8 w-1/2">
+      <div className="mx-auto py-12 md:flex-col lg:flex-col sm:flex-col sm:pt-16 lg:py-24 xl:py-40">
+        <div className="lg:grid lg:grid-cols-1 lg:gap-8">
           <div className="lg:col-span-1">
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold leading-8 tracking-tight text-white">
               Frequently asked questions
@@ -24,7 +24,7 @@ const UIPrompt = () => {
             </p>
           </div>
         </div>
-        <div className="mt-10 w-1/2">
+        <div className="mt-10">
           <div className="space-y-8 md:space-y-10">
             {quiz.map((item: Question) => (
               <div key={item.id}>
