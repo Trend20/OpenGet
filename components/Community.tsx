@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Community = () => {
+const Community = async () => {
   return (
     <div className="bg-white w-full px-6 sm:px-10 md:px-20 lg:px-40">
       <div className="py-12 sm:py-24 md:py-32">
@@ -16,7 +16,7 @@ const Community = () => {
             the latest projects and stories.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <Link
               href="#"
               className="rounded-md bg-black text-white p-3 sm:p-4 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
