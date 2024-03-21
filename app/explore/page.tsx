@@ -51,36 +51,13 @@ const Languages = () => {
     setCurrentPage(selected);
   };
   return (
-    // <div className="flex w-full justify-between mt-20">
-    //   <div className="flex">
-    //     <Sidebar setLang={setLanguage} />
-    //   </div>
-    //   <div className="flex flex-col p-3  rounded-md border border-grey w-full">
-    //     <div className="flex items-center w-full justify-between">
-    //       <h5 className="flex capitalize px-3 py-2 font-bold text-lg w-auto bg-meta-4 text-white rounded-md">
-    //         {language} Projects
-    //       </h5>
-    //       <Search value={searchQuery} onChange={handleSearchChange} />
-    //     </div>
-    //     <div className="grid w-full grid-cols-3 gap-8 mt-5">
-    //       {filteredRepos.map((repo: any) => (
-    //         <LanguageTile key={repo.id} repo={repo} />
-    //       ))}
-    //     </div>
-    //     <Pagination
-    //       currentPage={currentPage}
-    //       totalPages={totalPages}
-    //       onPageChange={handlePageChange}
-    //     />
-    //   </div>
-    // </div>
-    <div className="flex flex-col lg:flex-row w-full justify-between mt-20">
+    <div className="flex flex-col lg:flex-row w-full justify-between mt-10">
       <div className="flex">
         <Sidebar setLang={setLanguage} />
       </div>
       <div className="flex flex-col p-3 rounded-md border border-grey w-full lg:w-3/4 xl:w-4/5">
         <div className="flex items-center justify-between">
-          <h5 className="flex capitalize px-3 py-2 font-bold text-lg w-auto bg-meta-4 text-white rounded-md">
+          <h5 className="flex capitalize px-3 py-2 font-medium text-sm w-auto bg-meta-4 text-white rounded-md">
             {language} Projects
           </h5>
           <Search value={searchQuery} onChange={handleSearchChange} />

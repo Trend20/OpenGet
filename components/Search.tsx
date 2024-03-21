@@ -7,7 +7,7 @@ interface SearchProps {
 
 const Search = ({ value, onChange }: SearchProps) => {
   return (
-    <div className="flex w-1/4">
+    <div className="flex w-1/2 md:w-1/4">
       <input
         type="text"
         placeholder="Search.."

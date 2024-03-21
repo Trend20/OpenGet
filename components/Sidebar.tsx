@@ -121,36 +121,8 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ setLang }: SidebarProps) => {
   return (
-    // <div className="flex w-70 items-start">
-    //   <ul className="grid grid-cols-3 border w-full border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
-    //     {languages.map((lang) => (
-    //       <li
-    //         key={lang.id}
-    //         className={`flex w-full border-b border-b-grey p-3`}
-    //       >
-    //         <button
-    //           onClick={() => {
-    //             setLang(lang.name);
-    //           }}
-    //           className={`flex justify-center items-center px-2 py-4 text-white rounded-lg active w-full`}
-    //           aria-current="page"
-    //         >
-    //           <div className="flex w-22.5 justify-center items-center">
-    //             <Image
-    //               src={lang.icon}
-    //               alt={lang.name}
-    //               width="100"
-    //               height="100"
-    //               className="flex w-42.5"
-    //             />
-    //           </div>
-    //         </button>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
     <div className="flex flex-col md:flex-row w-full items-start md:items-center">
-      <ul className="grid grid-cols-2 md:grid-cols-3 border w-full md:me-4 mb-4 md:mb-0 border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400">
+      <ul className="grid grid-cols-5 md:grid-cols-3 border w-full md:me-4 mb-4 md:mb-0 border-grey rounded-md text-sm font-medium text-gray-500 dark:text-gray-400">
         {languages.map((lang) => (
           <li key={lang.id} className="flex w-full border-b border-b-grey p-3">
             <button
