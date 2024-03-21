@@ -37,13 +37,13 @@ const News = async () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div className="flex w-full flex-col justify-center items-center py-20 px-40 mt-20">
+        <div className="flex flex-col items-center justify-center py-10 px-4 sm:px-6 lg:px-8 xl:px-20 mt-10">
           <div className="flex justify-center items-center">
-            <h1 className="flex text-3xl text-center w-full font-extrabold leading-[1.1] text-boxdark-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl text-center font-extrabold leading-[1.1] text-boxdark-2">
               OpenSource Stories.
             </h1>
           </div>
-          <div className="grid w-full gap-8 py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full py-10">
             {openSourceStories.map((story: Story) => (
               <NewsCard key={story.title} story={story} />
             ))}
