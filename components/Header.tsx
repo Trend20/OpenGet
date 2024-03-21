@@ -28,11 +28,6 @@ const headerLinks: HeaderLinks[] = [
     linkName: "Podcasts",
     linkUrl: "/podcasts",
   },
-  {
-    id: 4,
-    linkName: "About",
-    linkUrl: "/about",
-  },
 ];
 
 const Header: React.FC = () => {

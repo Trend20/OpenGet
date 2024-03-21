@@ -48,19 +48,14 @@ export default function Discover() {
             {discoverInfo.map((item) => (
               <div key={item.id} className="flex flex-col">
                 <h6 className="flex items-center gap-x-3 text-lg font-semibold leading-7 text-white">
-                  <i>
-                    <RiProjectorLine size={30} />
-                  </i>
-                  Projects
+                  <i>{item.icon}</i>
+                  {item.title}
                 </h6>
 
                 <div className="mt-4 flex flex-auto flex-col text-base leading-7 text-indigo-200">
-                  <p className="flex-auto">
-                    Browse a curated list of open source projects for
-                    inspiration and collaboration
-                  </p>
+                  <p className="flex-auto">{item.desc}</p>
                   <Link
-                    href="/explore"
+                    href={item.url}
                     className="mt-4 text-sm font-semibold leading-6 text-white"
                   >
                     Learn more <span aria-hidden="true">→</span>
