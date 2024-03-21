@@ -5,8 +5,8 @@ import styles from "../styles/pagination.module.css";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }: any) => {
   return (
-    <div className="flex justify-center items-center mt-8">
-      <div className={styles.container}>
+    <div className="flex flex-col md:flex-row justify-center items-center mt-8">
+      <div className={`${styles.container} w-full md:w-auto mb-4 md:mb-0`}>
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
