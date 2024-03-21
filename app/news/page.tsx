@@ -3,32 +3,41 @@ import Loading from "./loading";
 import axios from "axios";
 import NewsCard from "@/components/NewsCard";
 import { Story } from "@/types/story";
+const key = process.env.NEXT_NEWS_API_KEY;
 
 async function getData() {
-  const topStoriesResponse = await axios.get(
-    "https://hacker-news.firebaseio.com/v0/topstories.json"
+  const stories = await fetch(
+    `https://newsapi.org/v2/everything?q=opensource&from=2024-02-21&sortBy=publishedAt&apiKey=${key}`
   );
-  const topStoryIds = topStoriesResponse.data;
-  const openSourceStoriesData = await Promise.all(
-    topStoryIds.map(async (storyId: any) => {
-      const storyResponse = await axios.get(
-        `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
-      );
-      const storyData = storyResponse.data;
-      // Filter stories related to open-source
-      if (storyData.title.toLowerCase().includes("open source")) {
-        return {
-          title: storyData.title,
-          url: storyData.url,
-          score: storyData.score,
-          author: storyData.by,
-          type: storyData.type,
-        };
-      }
-      return null;
-    })
-  );
-  return openSourceStoriesData.filter(Boolean);
+  if (!stories.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return stories.json();
+  // const topStoriesResponse = await axios.get(
+  //   "https://hacker-news.firebaseio.com/v0/topstories.json"
+  // );
+  // const topStoryIds = topStoriesResponse.data;
+  // const openSourceStoriesData = await Promise.all(
+  //   topStoryIds.map(async (storyId: any) => {
+  //     const storyResponse = await axios.get(
+  //       `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
+  //     );
+  //     const storyData = storyResponse.data;
+  //     // Filter stories related to open-source
+  //     if (storyData.title.toLowerCase().includes("open source")) {
+  //       return {
+  //         title: storyData.title,
+  //         url: storyData.url,
+  //         score: storyData.score,
+  //         author: storyData.by,
+  //         type: storyData.type,
+  //       };
+  //     }
+  //     return null;
+  //   })
+  // return openSourceStoriesData.filter(Boolean);
 }
 
 const News = async () => {
@@ -44,7 +53,7 @@ const News = async () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full py-10">
-            {openSourceStories.map((story: Story) => (
+            {openSourceStories.articles.map((story: Story) => (
               <NewsCard key={story.title} story={story} />
             ))}
           </div>
