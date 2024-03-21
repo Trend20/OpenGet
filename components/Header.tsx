@@ -42,9 +42,12 @@ const Header: React.FC = () => {
     if (session) return redirect("/explore");
   }
   return (
-    <div className="flex px-40 w-full items-center justify-between py-5 shadow z-99">
+    <div className="flex px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 w-full items-center justify-between py-4 shadow z-10">
       <div className="flex w-1/4 justify-start items-center">
-        <Link href="/" className="flex font-bold w-full text-2xl items-center">
+        <Link
+          href="/"
+          className="flex font-bold text-lg sm:text-xl items-center"
+        >
           <div className="flex items-center">
             <Image
               loading="lazy"
@@ -58,7 +61,7 @@ const Header: React.FC = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center space-x-8 justify-center w-1/4">
+      <div className="hidden sm:flex items-center space-x-8 justify-center w-1/2">
         {headerLinks.map((link) => (
           <Link
             prefetch={false}
@@ -73,7 +76,7 @@ const Header: React.FC = () => {
         ))}
       </div>
 
-      <div className="flex w-1/4 space-x-5 justify-end">
+      <div className="flex w-1/4 space-x-3 sm:space-x-5 justify-end">
         <Link href={"https://github.com/Trend20/OpenGet"} target="_blank">
           <i>
             <FaGithub size={20} fill="#1c2434" />
