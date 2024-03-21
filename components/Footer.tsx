@@ -4,8 +4,8 @@ import { FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 justify-center items-center px-40 bg-black">
-      <div className="flex items-center justify-between gap-4 px-4 text-sm md:gap-6 md:px-6">
+    <footer className="w-full py-4 md:py-6 justify-center items-center px-6 md:px-12 lg:px-40 bg-black">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 px-4 text-xs md:text-sm">
         <div className="flex items-center space-x-4">
           <Link
             className="rounded-full hover:bg-gray-100 p-2 transition-colors text-gray-500 dark:hover:bg-gray-800 dark:text-gray-400"
@@ -49,7 +49,7 @@ const Footer = () => {
             Contact Us
           </Link>
         </nav>
-        <p className="text-gray-500 text-xs tracking-wider dark:text-gray-400">
+        <p className="text-gray-500 text-xs tracking-wider dark:text-gray-400 mt-4 md:mt-0">
           © {new Date().getFullYear()} OpenGet. All rights reserved.
         </p>
       </div>
