@@ -20,7 +20,9 @@ export default function RootLayout({
         <NextAuthProvider>
           <div className="flex min-h-screen flex-col w-full">
             <Header />
-            <main className="flex flex-col w-full z-1 mt-10">{children}</main>
+            <main className="flex flex-col w-full z-1 min-h-screen mt-10">
+              {children}
+            </main>
             <Footer />
           </div>
         </NextAuthProvider>
