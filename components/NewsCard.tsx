@@ -7,9 +7,6 @@ const NewsCard = ({ story }: any) => {
   return (
     <div className="flex flex-col sm:flex-row items-center rounded-md border border-grey p-3 justify-between w-full">
       <div className="flex flex-col sm:flex-row">
-        {/* <h3 className="leading-8 font-bold text-xl py-3 sm:pr-4">
-          {story.title}
-        </h3> */}
         <Image
           loading="lazy"
           src={story.urlToImage}
