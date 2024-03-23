@@ -3,7 +3,7 @@ const key = process.env.NEXT_YOUTUBE_DATA_API_KEY;
 
 async function getData() {
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&q=opensource&type=video&maxResults=20`
+    `https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&q=opensource&type=video&maxResults=12`
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -16,7 +16,7 @@ const Learning = async () => {
   const videos = await getData();
   console.log(videos);
   return (
-    <div className="flex flex-col w-full justify-center items-center">
+    <div className="flex py-10 flex-col w-full justify-center items-center">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl text-center font-extrabold leading-[1.1] text-boxdark-2">
         Open Source Videos
       </h2>
