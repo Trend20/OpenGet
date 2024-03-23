@@ -14,7 +14,6 @@ async function getData() {
 
 const Learning = async () => {
   const videos = await getData();
-  console.log(videos);
   return (
     <div className="flex py-10 flex-col w-full justify-center items-center">
       <h2 className="text-2xl sm:text-3xl lg:text-4xl text-center font-extrabold leading-[1.1] text-boxdark-2">
