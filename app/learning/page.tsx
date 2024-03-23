@@ -3,7 +3,7 @@ const key = process.env.NEXT_YOUTUBE_DATA_API_KEY;
 
 async function getData() {
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&q=opensource&type=video&maxResults=30`
+    `https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&q=opensource&type=video&maxResults=20`
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
